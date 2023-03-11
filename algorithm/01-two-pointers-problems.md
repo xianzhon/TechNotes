@@ -111,11 +111,4 @@ public int maxArea(int[] A) {
 
 参考资料：
 
-- [Array题型: 双指针Two Pointers套路【LeetCode刷题套路教程2】 – TuringPlanet](https://turingplanet.org/2020/05/20/array-two-pointers%e5%a5%97%e8%b7%af%e3%80%90leetcode%e5%88%b7%e9%a2%98%e5%a5%97%e8%b7%af%e6%95%99%e7%a8%8b2%e3%80%91/)  用视频和图文详细介绍了双指针的类型和解题模板。
-
-
-
-
-
-
-
+- [Array题型: 双指针Two Pointers套路【LeetCode刷题套路教程2】 – TuringPlanet](https://turingplanet.org/2020/05/20/array-two-pointers%e5%a5%97%e8%b7%af%e3%80%90leetcode%e5%88%b7%e9%a2%98%e5%a5%97%e8%b7%af%e6%95%99%e7%a8%8b2%e3%80%91/):  用视频和图文的形式详细介绍了双指针的类型和解题模板。
