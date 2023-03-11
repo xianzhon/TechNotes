@@ -27,7 +27,7 @@
 
 笔记列表：
 
-- [利用 Redis 的 setnx 指令和 Redission 两种方式实现分布式锁](demo/P01_RedisDistributedLock/README.md)
+- [利用 Redis 实现分布式锁](demo/P01_RedisDistributedLock/README.md) 【setnx, Redission, Redlock】
 
 
 
