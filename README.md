@@ -28,6 +28,7 @@
 笔记列表：
 
 - [利用 Redis 实现分布式锁](demo/P01_RedisDistributedLock/README.md) 【setnx, Redission, Redlock】
+- [演示HashMap 1.8 并发安全问题](demo/01-HashMap-concurrent-issue.md)【HashMap 1.8, 并发安全问题】
 
 
 
