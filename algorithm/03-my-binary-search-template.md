@@ -334,3 +334,28 @@ class Solution { // time: O(log n), space: O(1)
     }
 ```
 
+###  [69. x 的平方根 - 力扣（LeetCode）](https://leetcode.cn/problems/sqrtx/) - 模板1
+
+这个题虽然是easy 难度，但是实现起来也还是要注意一些细节。
+
+```java
+class Solution {
+    public int mySqrt(int x) { // time: O(log x)
+        if (x <= 1) return x;  // 需要特别对0和1单独考虑，或者让low从0开始且溢出判断避免使用除法。
+        int low = 1, high = x / 2; // 初始值也可以是x
+        int ans = 1;
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            if ((long)mid * mid <= x) { // 强制long类型防止溢出，或者写 mid <= x / mid
+                ans = mid;
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return ans;
+    }
+}
+```
+
+
