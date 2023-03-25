@@ -24,6 +24,7 @@
 - [我的二分查找模板](algorithm/03-my-binary-search-template.md)【二分总结】
 - [旋转数组的二分搜索](algorithm/04-rotated-array-algorithm.md) 【二分应用】
 - [巧妙的二进制思想](algorithm/05-good-binary-bit-trick.md) 【二进制思想】
+- [容易迷糊的区间问题](algorithm/06-interval-related-problem.md) 【区间，排序，插入】
 
 ## 实践 Demo
 
