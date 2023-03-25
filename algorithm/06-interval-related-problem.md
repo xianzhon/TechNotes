@@ -97,3 +97,28 @@ public void insertInterval(List<int[]> intervals, int[] newInterval) {
         return deque.toArray(new int[deque.size()][2]);
     }
 ```
+
+## 删除区间
+
+题目：[435. 无重叠区间 - 力扣（LeetCode）](https://leetcode.cn/problems/non-overlapping-intervals/)
+
+思路：
+
+使用贪心来做，按区间结尾排序。贪心策略：优先保留结尾小且不相交的区间。 选择的区间结尾越小，留给剩余区间的空间就越大，就越能保留更多的区间。
+
+```java
+public int eraseOverlapIntervals(int[][] A) {  // time: O(nlogn), space: O(1)
+    // assert A.length >= 1
+    // 将区间按结束时间从小到大排序
+    Arrays.sort(A, (a, b) -> a[1] - b[1]);
+
+    int kept = 1, lastEnd = A[0][1]; // first one obviously be kept
+    for(int i = 1; i < A.length; i++) {
+        if (lastEnd <= A[i][0]) { // no overlap
+            lastEnd = A[i][1];
+            kept++;
+        } // otherwise, overlap, abandom
+    }
+    return A.length - kept;
+}
+```
