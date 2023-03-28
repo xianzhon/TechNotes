@@ -358,4 +358,57 @@ class Solution {
 }
 ```
 
+### [540. 有序数组中的单一元素 - 力扣（LeetCode）](https://leetcode.cn/problems/single-element-in-a-sorted-array/) - 模板3
 
+题目大概意思：给一个排好序的数组，除了一个数出现一次外，其他都是出现两次。求出现一次的数组，要求时间复杂度是O(log n)
+
+思路： 非常巧妙的思想，将每两个元素看成一组，观察规律。左边的组组内的元素都是相等的，右边的组组内元素都是不等的。因此，
+可以使用二分来找这个分界点。分界点所在的组的第一个元素就是答案。 注意细节处理：因为是奇数个元素，所以需要对最后一个元素特判一下即可。如果最后一个元素跟前面是不同的，直接返回。如果是相同的，则去掉最后一个元素也不影响答案，因为找到分界点之后，是返回组内的第一个元素。【如果允许修改输入数组，那么添加一个与A[n-1]不一样的元素也是可以的，例如A[n]=A[n-1] - 1），这样就不需要对最后一个元素进行特判】
+
+![](https://i.hish.top:8/2023/03/28/093108.png)
+
+```java
+public int singleNonDuplicate(int[] A) { // time: O(log n)
+        int n = A.length;
+        if (n == 1 || A[n-1] != A[n-2]) {
+            return A[n-1];
+        }
+        // 二分每一组
+        int low = 0, high = (n - 1) / 2 - 1;
+        while (low < high) {
+            int mid = (low + high) >>> 1;
+            if (A[mid * 2] == A[mid * 2 + 1]) {
+                low = mid + 1;
+            } else {
+                high = mid; // mid 有可能是答案, high=mid 也能缩小空间，因为mid是下取整的
+            }
+        }
+        return A[low * 2]; // 二分结束后 low == high
+    }
+```
+
+如果使用**模板1**来写也可以：
+
+```java
+public int singleNonDuplicate(int[] A) {
+        int n = A.length;
+        if (n == 1 || A[n-1] != A[n-2]) {
+            return A[n-1];
+        }
+        // 二分每一组
+        int low = 0, high = (n - 1) / 2 - 1;
+        int ans = 0;
+        while (low <= high) {
+            int mid = (low + high) >>> 1;
+            if (A[mid * 2] != A[mid * 2 + 1]) {
+                ans = mid; // 至少找到一个答案
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return A[ans * 2]; // 二分结束后 low == high
+    }
+```
+
+这个题目反应出，二分不一定需要有序（单调），只需要在一个区间上，前面一段满足某个性质，后一段满足另外一个性质，那么就可以用二分找出分界点。
