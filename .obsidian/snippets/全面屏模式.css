@@ -1,0 +1,93 @@
+/* @settings
+name: full-screen
+id: full-screen
+settings:
+
+-
+  id: hide-view-header
+  title: 隐藏界面标题栏
+  type: class-toggle
+  default: true
+-
+  id: hide-tabs
+  title: 隐藏标签栏
+  type: class-toggle
+  default: true
+-
+  id: hide-status-bar
+  title: Hide Status Bar
+  type: class-toggle
+  default: true
+-
+
+全屏模式（需下载style settings插件）
+*/
+
+/* hide tabs above notes */
+body:not(.is-mobile):not(:not(.hide-tabs)):not(.opacity-hide) .workspace-split.mod-vertical.mod-root .workspace-tab-header-container:not(:hover) {
+  height: 1em;
+  width: 100%;
+  margin-bottom: 0em;
+}
+body:not(.is-mobile):not(:not(.hide-tabs)) .workspace-split.mod-vertical.mod-root .workspace-tab-header-container:not(:hover) {
+  opacity: 0;
+}
+
+/* hide header */
+
+body:not(.is-mobile):not(:not(.hide-view-header)) .view-header:not(:hover) {
+  opacity: 0;
+}
+body:not(.is-mobile):not(:not(.hide-view-header)):not(.opacity-hide) .view-header:not(:hover) {
+ height: 1em;
+}
+
+.view-header {
+  transition: .25s;
+}
+
+/* don't hide on mobile */
+.is-mobile .view-header:not(:hover) {
+  opacity: 1;
+}
+
+/* hide status bar*/
+body:not(.is-mobile):not(:not(.hide-status-bar)) .status-bar:not(:hover) {
+  opacity: 0;
+}
+body:not(.is-mobile):not(:not(.hide-status-bar)):not(.opacity-hide) .status-bar:not(:hover) {
+  height: 1em;
+}
+.status-bar {
+  transition: .25s;
+}
+
+
+
+/*隐藏滚动条*/
+/* .markdown-preview-view.mytools::-webkit-scrollbar{
+  display:none;
+} */
+
+
+/* 隐藏侧边界面*/
+
+body .app-container .mod-left-split {
+  transition: all 0.3s linear;
+  opacity: 0;
+}
+body .app-container .mod-left-split:hover {
+  opacity: 1;
+}
+
+body .app-container .mod-right-split {
+  transition: all 0.3s linear;
+  opacity: 0;
+}
+body .app-container .mod-right-split:hover {
+  opacity: 1;
+}
+
+
+
+

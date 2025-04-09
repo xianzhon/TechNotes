@@ -1,0 +1,89 @@
+/* 自定义列表 */
+/* Lists */
+body {
+    --list-indent: 2em;
+    --list-spacing: 0.075em;
+    --list-bullet-border: none;
+    --list-bullet-radius: 50%;
+    --list-bullet-size: 0.3em;
+    --list-bullet-size-alt: calc(var(--list-bullet-size) / 2);
+    --list-bullet-transform: none;
+    --list-numbered-style: decimal;
+  }
+  
+  
+  body:not(.ul-marker-restore) .markdown-rendered .has-list-bullet .has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after,
+  body:not(.ul-marker-restore) .markdown-rendered .list-bullet::after,
+  body:not(.ul-marker-restore) .markdown-source-view.mod-cm6 .list-bullet::after {
+    --list-bullet-radius: 50%;
+    --list-bullet-border: calc(var(--list-bullet-size) / 2) solid var(--list-marker-color);
+    width: var(--list-bullet-size-alt);
+    height: var(--list-bullet-size-alt);
+    background-color: transparent;
+  }
+  
+  
+  body:not(.ul-marker-restore) .markdown-rendered .has-list-bullet .list-bullet::after,
+  body:not(.ul-marker-restore) .markdown-source-view.mod-cm6 .HyperMD-list-line.HyperMD-list-line-1.cm-line div.cm-fold-indicator~span.cm-formatting .list-bullet::after,
+  body:not(.ul-marker-restore) .markdown-source-view.mod-cm6 .HyperMD-list-line.HyperMD-list-line-1.cm-line>span.cm-formatting:first-of-type .list-bullet::after {
+    --list-bullet-radius: 50%;
+    --list-bullet-border: none;
+    width: var(--list-bullet-size);
+    height: var(--list-bullet-size);
+    background-color: var(--list-marker-color);
+  }
+  
+  
+  body:not(.ul-marker-restore) .markdown-rendered .has-list-bullet .has-list-bullet .list-bullet::after,
+  body:not(.ul-marker-restore) .markdown-source-view.mod-cm6 .HyperMD-list-line.HyperMD-list-line-2.cm-line div.cm-fold-indicator~span.cm-formatting .list-bullet::after,
+  body:not(.ul-marker-restore) .markdown-source-view.mod-cm6 .HyperMD-list-line.HyperMD-list-line-2.cm-line span.cm-hmd-list-indent~span.cm-formatting .list-bullet::after {
+    --list-bullet-radius: 0;
+    --list-bullet-border: none;
+    width: var(--list-bullet-size);
+    height: var(--list-bullet-size);
+    background-color: var(--list-marker-color);
+  }
+  
+  
+  body:not(.ul-marker-restore) .markdown-rendered .has-list-bullet .has-list-bullet .has-list-bullet .list-bullet::after,
+  body:not(.ul-marker-restore) .markdown-source-view.mod-cm6 .HyperMD-list-line.HyperMD-list-line-3.cm-line div.cm-fold-indicator~span.cm-formatting .list-bullet::after,
+  body:not(.ul-marker-restore) .markdown-source-view.mod-cm6 .HyperMD-list-line.HyperMD-list-line-3.cm-line span.cm-hmd-list-indent~span.cm-formatting .list-bullet::after {
+    --list-bullet-radius: 0;
+    --list-bullet-transform: rotate(45deg);
+    --list-bullet-border: none;
+    width: var(--list-bullet-size);
+    height: var(--list-bullet-size);
+    background-color: var(--list-marker-color);
+  }
+  
+  li.is-collapsed .list-bullet:after,
+  .is-collapsed~.cm-formatting-list .list-bullet:after {
+    background-color: var(--list-marker-color-collapsed) !important;
+  }
+  
+  ol>li.is-collapsed::marker,
+  ul>li.is-collapsed::marker,
+  .cm-s-obsidian .is-collapsed~.cm-formatting-list {
+    color: var(--list-marker-color-collapsed) !important;
+  }
+  
+  @media (hover: hover) {
+  
+    .list-collapse-indicator:hover~.list-bullet:after,
+    .cm-fold-indicator:hover~.list-bullet:after,
+    .list-collapse-indicator:hover~.cm-formatting-list .list-bullet:after,
+    .cm-fold-indicator:hover~.cm-formatting-list .list-bullet:after {
+        background-color: var(--list-marker-color-hover) !important;
+    }
+  
+    li.is-collapsed .list-collapse-indicator:hover~.list-bullet:after,
+    li.is-collapsed .cm-fold-indicator:hover~.list-bullet:after,
+    .list-collapse-indicator:hover.is-collapsed~.list-bullet:after,
+    .cm-fold-indicator:hover.is-collapsed~.list-bullet:after,
+    li.is-collapsed .list-collapse-indicator:hover~.cm-formatting-list .list-bullet:after,
+    li.is-collapsed .cm-fold-indicator:hover~.cm-formatting-list .list-bullet:after,
+    .list-collapse-indicator:hover.is-collapsed~.cm-formatting-list .list-bullet:after,
+    .cm-fold-indicator:hover.is-collapsed~.cm-formatting-list .list-bullet:after {
+        background-color: var(--list-marker-color-collapsed) !important;
+    }
+  } 

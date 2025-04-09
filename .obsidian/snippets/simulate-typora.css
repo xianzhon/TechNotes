@@ -1,0 +1,10 @@
+
+/* inline code block */
+.markdown-rendered :not(pre) > code {
+    background-color: "grey" !important;
+    color: #cf222e !important;
+}
+
+body {
+    --inline-code-background: red;
+}

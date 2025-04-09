@@ -1,0 +1,13 @@
+{
+  "baseFontSize": 18,
+  "theme": "system",
+  "cssTheme": "GitHub Theme",
+  "accentColor": "",
+  "showViewHeader": true,
+  "nativeMenus": false,
+  "enabledCssSnippets": [
+    "自定义列表前缀",
+    "自定义分割线",
+    "文件夹icon"
+  ]
+}

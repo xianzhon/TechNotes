@@ -1,0 +1,462 @@
+{
+  "workspaces": {
+    "review": {
+      "main": {
+        "id": "abd76c7898540e46",
+        "type": "split",
+        "children": [
+          {
+            "id": "85fbe9ae52365114",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "987fc9dc242620f2",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "笔记/vnote/dev/01_leetcode/acwing/01-算法笔试面试辅导课.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "34e3d9ec5bd946bd",
+        "type": "split",
+        "children": [
+          {
+            "id": "01ad0ff0afce9148",
+            "type": "tabs",
+            "dimension": 51.229508196721305,
+            "children": [
+              {
+                "id": "0f29edb23f08f51f",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "c31990bde8e2febd",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "nodejs",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "69d7ff887275f395",
+                "type": "leaf",
+                "state": {
+                  "type": "starred",
+                  "state": {}
+                }
+              },
+              {
+                "id": "552cd7f4712c1bb6",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {}
+                }
+              }
+            ]
+          },
+          {
+            "id": "f9a7306865d12cab",
+            "type": "tabs",
+            "dimension": 48.77049180327869,
+            "children": [
+              {
+                "id": "e5a974a90178cbaf",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "笔记/vnote/dev/01_leetcode/acwing/01-算法笔试面试辅导课.md"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 346.5
+      },
+      "right": {
+        "id": "1d258f0e9d6852a6",
+        "type": "split",
+        "children": [
+          {
+            "id": "40b1d9381322049b",
+            "type": "tabs",
+            "dimension": 56.86900958466454,
+            "children": [
+              {
+                "id": "3547c430b23ab84b",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "笔记/vnote/dev/01_leetcode/acwing/01-算法笔试面试辅导课.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": false
+                  }
+                }
+              },
+              {
+                "id": "9a0e890841e679aa",
+                "type": "leaf",
+                "state": {
+                  "type": "advanced-tables-toolbar",
+                  "state": {}
+                }
+              },
+              {
+                "id": "8fe245a33b128853",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {}
+                }
+              },
+              {
+                "id": "20b8e7b84a1f9c56",
+                "type": "leaf",
+                "state": {
+                  "type": "copilot-chat-view",
+                  "state": {}
+                }
+              }
+            ],
+            "currentTab": 2
+          },
+          {
+            "id": "cd4aebaf4db0308c",
+            "type": "tabs",
+            "dimension": 21.831735889243873,
+            "children": [
+              {
+                "id": "6daabd99f366e99a",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "笔记/vnote/dev/01_leetcode/acwing/01-算法笔试面试辅导课.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": false
+                  }
+                }
+              },
+              {
+                "id": "ce40b16a461518ea",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "20cbdba1d4b56407",
+            "type": "tabs",
+            "dimension": 21.299254526091588,
+            "children": [
+              {
+                "id": "8452b2eb66032b67",
+                "type": "leaf",
+                "state": {
+                  "type": "recent-files",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 369.5,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "daily-notes:Open today's daily note": false,
+          "command-palette:Open command palette": false,
+          "markdown-importer:Open format converter": false,
+          "random-note:Open random note": false,
+          "templates:Insert template": false,
+          "flashcards-obsidian:Generate flashcards": false,
+          "table-editor-obsidian:Advanced Tables Toolbar": false,
+          "obsidian-excalidraw-plugin:Create new drawing": false,
+          "copilot:Copilot Chat": false,
+          "workspaces:Manage workspace layouts": false
+        }
+      },
+      "active": "987fc9dc242620f2",
+      "mtime": "2024-04-17T21:22:59+08:00"
+    },
+    "write": {
+      "main": {
+        "id": "abd76c7898540e46",
+        "type": "split",
+        "children": [
+          {
+            "id": "85fbe9ae52365114",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "987fc9dc242620f2",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "笔记/05-生活方面.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              },
+              {
+                "id": "cc20fe0c11237738",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "笔记/如何减小肚子.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "34e3d9ec5bd946bd",
+        "type": "split",
+        "children": [
+          {
+            "id": "01ad0ff0afce9148",
+            "type": "tabs",
+            "dimension": 51.229508196721305,
+            "children": [
+              {
+                "id": "0f29edb23f08f51f",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "c31990bde8e2febd",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "nodejs",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  }
+                }
+              },
+              {
+                "id": "69d7ff887275f395",
+                "type": "leaf",
+                "state": {
+                  "type": "starred",
+                  "state": {}
+                }
+              },
+              {
+                "id": "552cd7f4712c1bb6",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {}
+                }
+              }
+            ]
+          },
+          {
+            "id": "f9a7306865d12cab",
+            "type": "tabs",
+            "dimension": 48.770491803278695,
+            "children": [
+              {
+                "id": "e5a974a90178cbaf",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "笔记/如何减小肚子.md"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 268.5
+      },
+      "right": {
+        "id": "1d258f0e9d6852a6",
+        "type": "split",
+        "children": [
+          {
+            "id": "40b1d9381322049b",
+            "type": "tabs",
+            "dimension": 39.65163934426229,
+            "children": [
+              {
+                "id": "3547c430b23ab84b",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "笔记/如何减小肚子.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": false
+                  }
+                }
+              },
+              {
+                "id": "9a0e890841e679aa",
+                "type": "leaf",
+                "state": {
+                  "type": "advanced-tables-toolbar",
+                  "state": {}
+                }
+              },
+              {
+                "id": "8fe245a33b128853",
+                "type": "leaf",
+                "state": {
+                  "type": "calendar",
+                  "state": {}
+                }
+              },
+              {
+                "id": "20b8e7b84a1f9c56",
+                "type": "leaf",
+                "state": {
+                  "type": "copilot-chat-view",
+                  "state": {}
+                }
+              }
+            ],
+            "currentTab": 2
+          },
+          {
+            "id": "cd4aebaf4db0308c",
+            "type": "tabs",
+            "dimension": 39.03688524590164,
+            "children": [
+              {
+                "id": "6daabd99f366e99a",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "笔记/如何减小肚子.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": false
+                  }
+                }
+              },
+              {
+                "id": "ce40b16a461518ea",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "id": "20cbdba1d4b56407",
+            "type": "tabs",
+            "dimension": 21.31147540983606,
+            "children": [
+              {
+                "id": "8452b2eb66032b67",
+                "type": "leaf",
+                "state": {
+                  "type": "recent-files",
+                  "state": {}
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 369.5,
+        "collapsed": true
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "daily-notes:Open today's daily note": false,
+          "command-palette:Open command palette": false,
+          "markdown-importer:Open format converter": false,
+          "random-note:Open random note": false,
+          "templates:Insert template": false,
+          "flashcards-obsidian:Generate flashcards": false,
+          "table-editor-obsidian:Advanced Tables Toolbar": false,
+          "obsidian-excalidraw-plugin:Create new drawing": false,
+          "copilot:Copilot Chat": false,
+          "workspaces:Manage workspace layouts": false
+        }
+      },
+      "active": "cc20fe0c11237738",
+      "mtime": "2024-04-19T07:12:21+08:00"
+    }
+  },
+  "active": "write"
+}

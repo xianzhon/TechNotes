@@ -1,0 +1,30 @@
+{
+  "alwaysUpdateLinks": true,
+  "vimMode": false,
+  "spellcheck": false,
+  "showFrontmatter": true,
+  "showLineNumber": false,
+  "tabSize": 4,
+  "showUnsupportedFiles": true,
+  "attachmentFolderPath": "附件",
+  "promptDelete": false,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "笔记",
+  "foldHeading": true,
+  "foldIndent": true,
+  "useTab": true,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "legacyEditor": false,
+  "livePreview": true,
+  "showInlineTitle": false,
+  "defaultViewMode": "source",
+  "readableLineLength": false,
+  "useMarkdownLinks": true,
+  "newLinkFormat": "relative"
+}

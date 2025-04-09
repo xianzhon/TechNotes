@@ -1,0 +1,21 @@
+/* 隐藏侧栏，悬停出现（直接跳出） */
+
+.workspace-ribbon.side-dock-ribbon.mod-left.is-collapsed,
+.workspace-ribbon.mod-left
+{
+    position: absolute;
+    top:0px;
+    left:-30px;
+    height:95%;
+    opacity:0;
+    transition:all .3s ease-out .2s;
+}
+.workspace-ribbon.side-dock-ribbon.mod-left.is-collapsed:hover,
+.workspace-ribbon.mod-left:hover{
+    opacity:1;
+    left:0px;
+    transition:all .3s ease-out .2s;
+}
+.side-dock-actions{
+    margin-top:35px;
+}
