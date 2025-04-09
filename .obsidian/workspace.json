@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "microservices/design-patterns/readme.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "readme"
             }
           }
         ]
@@ -98,13 +98,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "microservices/design-patterns/readme.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline of readme"
             }
           }
         ]
@@ -128,26 +128,15 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "diary/My Tasks.md",
+                "file": "microservices/design-patterns/readme.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from My Tasks"
-            }
-          },
-          {
-            "id": "20b8e7b84a1f9c56",
-            "type": "leaf",
-            "state": {
-              "type": "copilot-chat-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "title": "Outgoing links from readme"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       },
       {
         "id": "cd4aebaf4db0308c",
@@ -160,7 +149,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "microservices/design-patterns/readme.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -170,7 +159,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks for readme"
             }
           },
           {
@@ -190,7 +179,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 641.5
+    "width": 641.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -211,60 +201,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e857789b8708149a",
+  "active": "0f29edb23f08f51f",
   "lastOpenFiles": [
-    "Chats/New Chat.md",
-    "diary/My Tasks.md",
-    "diary/日记模板1.md",
-    "templates/time.md",
-    "templates/plain paste.md",
-    "readme.md",
-    "index.md",
-    "Chats",
-    "assets/assets.md",
-    "笔记/vnote/tool/效率/NAS - qnap main.md",
-    "笔记/server security.md",
-    "笔记/server maintenance-服务器维护.md",
-    "附件/Pasted image 20241202232517.png",
-    "笔记/vnote/other/订阅ChatGPT总结.md",
-    "笔记/home and network security.md",
-    "笔记/SpringSecurity.md",
-    "笔记/vnote/开发/OS/linux/ufw.md",
-    "笔记/vnote/开发/program language/database/mysql.md",
-    "笔记/vnote/dev/02_system_design/系统设计-总结.md",
-    "笔记/vnote/开发/docker/docker-main.md",
-    "TODO.md",
-    "笔记/vnote/开发/program language/database/redis.md",
-    "笔记/06-使用说明书.md",
-    "笔记/vnote/dev/01_leetcode/ByTag/03_Backtrack/3-N皇后问题.md",
-    "笔记/AFP - samba alternative.md",
-    "笔记/vnote/开发/OS/samba.md",
-    "笔记/vnote/开发/OS/my ubuntu main.md",
-    "笔记/vnote/开发/OS/linux.md",
-    "附件/Pasted image 20241031222348.png",
-    "附件/QNAP NAS如何使用代理拉取docker镜像_qnap docker拉取镜像失败-CSDN博客 2.html",
-    "附件/QNAP NAS如何使用代理拉取docker镜像_qnap docker拉取镜像失败-CSDN博客 1.html",
-    "附件/QNAP NAS如何使用代理拉取docker镜像_qnap docker拉取镜像失败-CSDN博客.html",
-    "附件/Pasted image 20241014215311.png",
-    "Canvas/2023-06-复习算法.canvas",
-    "tags",
-    "笔记/生活",
-    "Untitled.canvas",
-    "随机整理和复习.canvas",
-    "Codes/MarinSoft/xianzhong-wang-improved-design.pdf",
-    "附件/Let's Encrypt_ Get Wildcard SSL Certificate - Certbot - ShellHacks.pdf",
-    "附件/10-跳表.pdf",
-    "附件/Pasted image 20240728160621.png",
-    "附件/Pasted image 20240512094841.png",
-    "附件/_1514641638_1064085998.png",
-    "Canvas/24.01-SpringBoot自动装配的原理.canvas",
-    "附件/Pasted image 20240414220758.png",
-    "附件/Pasted image 20240414215544.png",
-    "附件/Pasted image 20240414215315.png",
-    "附件/Pasted image 20240414215238.png",
-    "copilot-conversations",
-    "Excalidraw/Untitled.canvas",
-    "笔记/test canvas.canvas",
-    "笔记/Untitled.canvas"
   ]
 }

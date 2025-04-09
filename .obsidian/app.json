@@ -9,7 +9,7 @@
   "attachmentFolderPath": "附件",
   "promptDelete": false,
   "newFileLocation": "folder",
-  "newFileFolderPath": "笔记",
+  "newFileFolderPath": "notes",
   "foldHeading": true,
   "foldIndent": true,
   "useTab": true,
