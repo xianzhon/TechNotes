@@ -1,8 +1,8 @@
-# 我的二分查找模板
+# 二分查找模板
 
 基本的二分查找算法，比较容易懂，但是二分查找有很多变形，用于解决不同的算法问题。因此，针对每个问题，采用合适的二分查找算法才不容易出错。这里列出了我对二分查找算法的一些理解。
 
-## 避免死循环
+## 1. 避免死循环
 
 - 每次划分完，一定是要缩小解空间的，这样才不会造成死循环
 - 需要注意：循环条件的写法 (start <= end, start + 1 < end)
@@ -10,9 +10,9 @@
     - java中可以这么写: mid = (start + end) >>> 1;   使用逻辑右移运算符。
     - 为了可读性以及兼容其他语言通用写法： `mid = start + (end - start)/2`;
 
-## 根据循环条件划分三种模板
+## 2. 根据循环条件划分三种模板
 
-### 模板1: low <= high
+### 2.1. 模板1: low <= high
 
 这种循环条件，保证二分的数组至少有一个元素，循环体中一定要缩短空间，改变low和high指针时，不要包含mid。
 
@@ -30,7 +30,7 @@ while (low <= high) {
 return ans;
 ```
 
-### 模板2: low + 1 < high 
+### 2.2. 模板2: low + 1 < high
 
 始终保证二分时，至少有三个元素，这样不管怎样缩减空间（例如：给low和high赋值为mid），都不会造成死循环。
 缺点是精确查找时，循环结束，还会剩下两个元素，需要单独判断。
@@ -46,12 +46,12 @@ while (low + 1 < high) {
 }
 ```
 
-### 模板3: low < high
+### 2.3. 模板3: low < high
 
-至少有两个元素才进行二分，结束条件就是只有一个元素了 low==high，最后还剩下一个元素，精确查找需要单独判断一次。
+至少有两个元素才进行二分，结束条件就是只有一个元素了（low = high），精确查找需单独判断一次。
 
 ```java
-// 一定需要注意缩短空间的写法：(例如数组[1,2]，low=1,high=2, 取中点时采用了下取整，会倾向于左边，所以得到1)
+// 要注意缩短空间的写法：(例如数组[1,2]，low=1,high=2, 取中点时采用了下取整，会倾向于左边，所以缩短左边时，需要加1)
 while (low < high) {
     int mid = low + (high - low) / 2;
     if (xxx) { // remove left
@@ -72,7 +72,7 @@ while (low < high) {
 }
 ```
 
-## 运用模板解决问题
+## 3. 运用模板解决问题
 
 - ① 在有序数组中，**精确查找**某个数，返回下标，不存在返回-1 【模板1】
 - ② 在有序数组中，寻找**第一个满足条件**的位置，不存在返回-1 【模板1】
@@ -86,14 +86,14 @@ while (low < high) {
 
 对于写法3，比较容易出错，考虑时，要多思考一步，因此尽量不要使用它。
 
-## 练习题
+## 4. 练习题
 
-### [34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/) - 模板1
+### 4.1. [34. 在排序数组中查找元素的第一个和最后一个位置](https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/) - 模板1
 
 ```java
 class Solution { // time: O(log n), space: O(1)
     int searchFirst(int[] nums, int target) {
-        int left = 0, right = nums.length - 1, ans = -1;        
+        int left = 0, right = nums.length - 1, ans = -1;
         while (left <= right) {
             int mid = (left + right) >>> 1;
             if (nums[mid] == target) {
@@ -109,7 +109,7 @@ class Solution { // time: O(log n), space: O(1)
     }
 
     int searchLast(int[] nums, int target) {
-        int left = 0, right = nums.length - 1, ans = -1;        
+        int left = 0, right = nums.length - 1, ans = -1;
         while (left <= right) {
             int mid = (left + right) >>> 1;
             if (nums[mid] == target) {
@@ -131,7 +131,7 @@ class Solution { // time: O(log n), space: O(1)
     }
 }
 ```
-### [35. 搜索插入位置](https://leetcode.cn/problems/search-insert-position/) -  模板1更好
+### 4.2. [35. 搜索插入位置](https://leetcode.cn/problems/search-insert-position/) -  模板1更好
 
 思路：需要注意下ans的初始化。不过跟上面找最后一个元素是一样的。
 
@@ -158,11 +158,11 @@ class Solution { // time: O(log n), space: O(1)
 }
 ```
 
-### [28 · 搜索二维矩阵 - LintCode](https://www.lintcode.com/problem/28/) - 模板1
+### 4.3. [28 · 搜索二维矩阵 - LintCode](https://www.lintcode.com/problem/28/) - 模板1
 
 思路：这个题目，只能先按照第1列二分，找最后一个 <= target的位置，然后再在这一行进行二分。
 
-```
+```java
      public boolean searchMatrix(int[][] matrix, int target) {
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return false;
@@ -203,12 +203,12 @@ class Solution { // time: O(log n), space: O(1)
 
 ```
 
-### [38 · 搜索二维矩阵（二） - LintCode](https://www.lintcode.com/problem/38)
+### 4.4. [38 · 搜索二维矩阵（二） - LintCode](https://www.lintcode.com/problem/38)
 
 思路：这个题就是从右上角或者左下角开始，一次排除一行或一列。简单。思维有点急转弯。
 
 
-### [74 · 第一个错误的代码版本 - LintCode](https://www.lintcode.com/problem/74/)
+### 4.5. [74 · 第一个错误的代码版本 - LintCode](https://www.lintcode.com/problem/74/)
 
 ```java
     int firstBadVersion(int n) {
@@ -228,7 +228,7 @@ class Solution { // time: O(log n), space: O(1)
     }
 ```
 
-### [162. 寻找峰值](https://leetcode.cn/problems/find-peak-element/) - 模板2
+### 4.6. [162. 寻找峰值](https://leetcode.cn/problems/find-peak-element/) - 模板2
 
 思路：二分最后还剩下2个元素，只要数组中还剩下三个元素就继续二分。比较条件，就是判断mid 和 mid + 1的大小。
 
@@ -251,7 +251,7 @@ class Solution { // time: O(log n), space: O(1)
 ```
 
 
-### [248 · Count of Smaller Number - LintCode](https://www.lintcode.com/problem/248/) - 模板1
+### 4.7. [248 · Count of Smaller Number - LintCode](https://www.lintcode.com/problem/248/) - 模板1
 
 思路：从有序数组中找第一个大于等于target的元素，需要注意ans的初始值。
 
@@ -289,9 +289,9 @@ class Solution { // time: O(log n), space: O(1)
 ```
 
 
-### [33. 搜索旋转排序数组](https://leetcode.cn/problems/search-in-rotated-sorted-array/) - 模板1
+### 4.8. [33. 搜索旋转排序数组](https://leetcode.cn/problems/search-in-rotated-sorted-array/) - 模板1
 
-旋转数组，精确查找，返回下标。  
+旋转数组，精确查找，返回下标。
 
 ```java
 输入：nums = [4,5,6,7,0,1,2], target = 0
@@ -300,7 +300,7 @@ class Solution { // time: O(log n), space: O(1)
 示例 2：
 输入：nums = [4,5,6,7,0,1,2], target = 3
 输出：-1
-  
+
 示例 3：
 输入：nums = [1], target = 0
 输出：-1
@@ -334,7 +334,7 @@ class Solution { // time: O(log n), space: O(1)
     }
 ```
 
-###  [69. x 的平方根 - 力扣（LeetCode）](https://leetcode.cn/problems/sqrtx/) - 模板1
+### 4.9. [69. x 的平方根 - 力扣（LeetCode）](https://leetcode.cn/problems/sqrtx/) - 模板1
 
 这个题虽然是easy 难度，但是实现起来也还是要注意一些细节。
 
@@ -358,7 +358,7 @@ class Solution {
 }
 ```
 
-### [540. 有序数组中的单一元素 - 力扣（LeetCode）](https://leetcode.cn/problems/single-element-in-a-sorted-array/) - 模板1 或 模板3
+### 4.10. [540. 有序数组中的单一元素 - 力扣（LeetCode）](https://leetcode.cn/problems/single-element-in-a-sorted-array/) - 模板1 或 模板3
 
 题目大概意思：给一个排好序的数组，除了一个数出现一次外，其他都是出现两次。求出现一次的数，要求时间复杂度是O(log n)
 
@@ -375,7 +375,7 @@ class Solution {
 public int singleNonDuplicate(int[] A) {
         int n = A.length;
         if (n == 1 || A[n-1] != A[n-2]) return A[n-1];
-        
+
         int low = 0, high = (n - 1) / 2 - 1;  // 二分每一组
         int ans = 0;
         while (low <= high) {
@@ -412,4 +412,4 @@ public int singleNonDuplicate(int[] A) { // time: O(log n)
     }
 ```
 
-总结：从这个题目可以反映出，二分不一定需要有序（单调），只需要在一个区间上，前面一段满足某个性质，后一段满足另外一个性质，那么就可以用二分找出分界点。有人称为二段性，有二段性，就可以二分。
+**总结**：从这个题目可以反映出，二分不一定需要有序（单调），只需要在一个区间上，前面一段满足某个性质，后一段满足另外一个性质，那么就可以用二分找出分界点。有人称为二段性，只要有二段性，就可以二分。

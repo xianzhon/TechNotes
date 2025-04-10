@@ -2,11 +2,11 @@
 
 对于区间相关的问题，因为涉及到两个端点，一段区间，在和循环关联在一起的时候，判断两个区间相交容易迷糊。这个笔记总结一下常见的区间的问题的思考方式。要多画图，然后把条件想清楚，再去用代码实现。
 
-判断区间 A和 B 是否有交集： `!(A.end < B.start || A.start > B.end)  <==> A.end >= B.start && A.start <= B.end`
+判断区间 A和 B 是否有交集： `!(A.end < B.start || A.start > B.end) 等价于 A.end >= B.start && A.start <= B.end`
 
 ![](https://i.hish.top:8/2023/03/25/094302.png)
 
-## 有序区间的插入
+## 1. 有序区间的插入
 
 题目：[57. 插入区间 - 力扣（LeetCode）](https://leetcode.cn/problems/insert-interval/)
 
@@ -71,7 +71,7 @@ public void insertInterval(List<int[]> intervals, int[] newInterval) {
 }
 ```
 
-## 合并区间
+## 2. 合并区间
 
 题目： [56. 合并区间 - 力扣（LeetCode）](https://leetcode.cn/problems/merge-intervals/)
 
@@ -98,7 +98,7 @@ public void insertInterval(List<int[]> intervals, int[] newInterval) {
     }
 ```
 
-## 删除区间
+## 3. 删除区间
 
 题目：[435. 无重叠区间 - 力扣（LeetCode）](https://leetcode.cn/problems/non-overlapping-intervals/)
 

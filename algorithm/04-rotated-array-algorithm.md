@@ -2,11 +2,11 @@
 
 旋转数组上的搜索，有时候很难想清楚，有的解法思路是一层if嵌套一层if的。本文总结了一下，找了一个比较容易理解，且不容易出错的方式来解决。
 
-## 二分搜索精确值
+## 1. 二分搜索精确值
 
 对于旋转数组来说，精确查找，需要分成两步。首先去找分界点，然后根据target在哪一段（通过判断 target >= A[0]）进行精确的二分查找。
 
-### [33. 搜索旋转排序数组 - 力扣（LeetCode）](https://leetcode.cn/problems/search-in-rotated-sorted-array/)
+### 1.1. [33. 搜索旋转排序数组 - 力扣（LeetCode）](https://leetcode.cn/problems/search-in-rotated-sorted-array/)
 
 题目说明：一定是一个旋转数组，没有重复元素。
 
@@ -53,7 +53,7 @@ class Solution {
 }
 ```
 
-### [81. 搜索旋转排序数组 II - 力扣（LeetCode）](https://leetcode.cn/problems/search-in-rotated-sorted-array-ii/)
+### 1.2. [81. 搜索旋转排序数组 II - 力扣（LeetCode）](https://leetcode.cn/problems/search-in-rotated-sorted-array-ii/)
 
 题目说明：与问题I相比，包含重复元素了。
 
@@ -102,11 +102,11 @@ class Solution {
 }
 ```
 
-## 二分求最小值
+## 2. 二分求最小值
 
 这里本质是找分界点，除了找最小值，还可以找最大值。
 
-### [153. 寻找旋转排序数组中的最小值 - 力扣（LeetCode）](https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/)
+### 2.1. [153. 寻找旋转排序数组中的最小值 - 力扣（LeetCode）](https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/)
 
 题目说明：元素各不相同，但是不保证旋转。因为旋转n次等于没有旋转。所以需要特判一下。
 
@@ -134,7 +134,7 @@ class Solution {
 }
 ```
 
-### [154. 寻找旋转排序数组中的最小值 II - 力扣（LeetCode）](https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array-ii/)
+### 2.2. [154. 寻找旋转排序数组中的最小值 II - 力扣（LeetCode）](https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array-ii/)
 
 问题描述：跟问题I的区别在于，可能有重复的元素，也不保证一定旋转。
 

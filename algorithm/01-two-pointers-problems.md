@@ -10,13 +10,15 @@
 
 
 
-## 题目1： [42. 接雨水 - 力扣（LeetCode）](https://leetcode.cn/problems/trapping-rain-water/)
+## 1. 题目1： [42. 接雨水 - 力扣（LeetCode）](https://leetcode.cn/problems/trapping-rain-water/) - hard
+
+题目：给定 `n` 个非负整数，A[i] 表示每个宽度为 `1` 的柱子的高度，计算按此排列的柱子，下雨之后能接多少雨水。
 
 这个题目的基本思路是，对于每个柱子，假设它的左侧和右侧（可以不相邻）都有比它高的柱子 （leftMax, rightMax），那么雨水一定是可以覆盖当前柱子的，计算柱子A[i] 能接到的雨水，可以通过公式： min (leftMax, rightMax) - A[i]。那如果两侧有一个比当前A[i] 小会怎样，这个公式的结果也是 0，因为leftMax 和 rightMax容纳了A[i]，不会比 A[i] 自身更小 （当然也可以定义leftMax 和 rightMax 不包含 A[i]，严格的左侧和右侧最大值，计算公式加个 if 判断即可）。对于每个柱子，我们都可以这样求，然后累加就能知道所有柱子能接的雨水量了。
 
-怎么求每个柱子左边和右边比它高的柱子呢？有两种思路，一种是 DP，分别从左右两侧遍历一遍，记录到数组中。一种是使用反向双指针，这种思路稍微不是很好想。
+怎么求每个柱子左边和右边比它高的柱子呢？有两种思路，一种是 DP，分别从左右两侧遍历一遍，记录到数组中。一种是使用反向双指针，这种思路不是很好想。
 
-### 解法1：DP 时间-O(n), 空间-O(n)
+### 1.1. 解法1：DP 时间-O(n), 空间-O(n)
 
 对数组从两边分别遍历一次，记录每个元素左侧和右侧的最大值。然后再对每个柱子遍历一遍，累加总的雨水量。
 
@@ -44,7 +46,7 @@ public int trap(int[] A) { // time: O(n), space: O(n)
 }
 ```
 
-### 解法2：双指针 时间-O(n), 空间-O(1)
+### 1.2. 解法2：双指针 时间-O(n), 空间-O(1)
 
 双指针，使用 left, right 反向双指针，然后使用leftMax, rightMax 两个变量记录两个指针在移动过程中访问的最大值（包括当前指针自身所在位置）。
 
@@ -66,7 +68,7 @@ public int trap(int[] A) {
         // 更新A[right]右侧 A[right ~ n-1] 的最大值 (包括 right 位置)
         rightMax = Math.max(rightMax, A[right]); 
         
-        if (A[left] < A[right]) {  // 一定能推出：leftMax < rightMax
+        if (A[left] < A[right]) {  // 备注1：一定能推出：leftMax < rightMax
             ans += leftMax - A[left++];
         } else {
             ans += rightMax - A[right--];
@@ -78,9 +80,10 @@ public int trap(int[] A) {
 
 说明：这个题目虽然也可以用单调栈来做，但是描述以及思维难度相当于上升了一个级别，而且空间复杂度是 O(n) 并不比双指针算法好。然后评论区，还看到过一种更短一点的代码，时空复杂度和双指针算法一样，但思维非常有跳跃性，难度比双指针更大，也不建议去看了。
 
+问题 1：备注 1 处
 
 
-## 题目2：[11. 盛最多水的容器 - 力扣（LeetCode）](https://leetcode.cn/problems/container-with-most-water/)
+## 2. 题目2：[11. 盛最多水的容器 - 力扣（LeetCode）](https://leetcode.cn/problems/container-with-most-water/)
 
 双指针的思路很简单，每次移动较小的那个柱子，计算当前盛水量并更新答案。
 

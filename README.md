@@ -21,7 +21,7 @@
 
 - [使用双指针算法解决两个 Leetcode 难题](algorithm/01-two-pointers-problems.md)  【思路：双指针】
 - [从多个递增的生成序列中找第n个数](algorithm/02-find-n-elem-from-sequence.md) 【思路：双指针合并有序数组】【去重技巧】
-- [我的二分查找模板](algorithm/03-my-binary-search-template.md)【二分总结】
+- [我的二分查找模板](algorithm/03-binary-search-template.md)【二分总结】
 - [旋转数组的二分搜索](algorithm/04-rotated-array-algorithm.md) 【二分应用】
 - [巧妙的二进制思想](algorithm/05-good-binary-bit-trick.md) 【二进制思想】
 - [容易迷糊的区间问题](algorithm/06-interval-related-problem.md) 【区间，排序，插入】
