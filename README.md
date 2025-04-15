@@ -33,6 +33,7 @@
 - [利用 Redis 实现分布式锁](demo/P01_RedisDistributedLock/README.md) 【setnx, Redission, Redlock】
 - [演示HashMap 1.8 并发安全问题](demo/01-HashMap-concurrent-issue.md)【HashMap 1.8, 并发安全问题】
 - [key-value-app: 练习NodeJs+MongoDB+Docker/Compose 开发部署 Restful API](demo/P02_key-value-app/readme.md)
+- [ES6 New Features](demo/P03_ES6-new-feature/readme.md) - master it with demos
 
 
 
