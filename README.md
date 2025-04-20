@@ -27,6 +27,7 @@
 - [容易迷糊的区间问题](algorithm/06-interval-related-problem.md) 【区间，排序，插入】
 - [排列、组合、子集相关题目](algorithm/07-排列-组合-子集相关题目.md)
 - [思路简单但实现复杂的题目汇总](algorithm/08-思路简单但实现复杂的题目汇总.md)
+- [系列题-相互关联](algorithm/09-系列题-相互关联.md)
 
 ## 3. 实践 Demo
 
