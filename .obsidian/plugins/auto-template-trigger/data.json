@@ -1,0 +1,12 @@
+{
+  "folderSpecificTemplates": [
+    {
+      "folderPath": "algorithm/leetcode",
+      "templateName": "LC-题解"
+    },
+    {
+      "folderPath": "algorithm/leetcode-vip",
+      "templateName": "LC-题解"
+    }
+  ]
+}

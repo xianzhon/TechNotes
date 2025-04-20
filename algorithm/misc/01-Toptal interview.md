@@ -4,7 +4,7 @@ Check online: https://www.youtube.com/watch?v=zBl3YPAe23o
 
 ![image-20250412104655967](https://i.hish.top:8/2025/04/12/104656.png)
 
-### 1.1. 1.1.Approach1
+### 1.1. Approach1
 
 ```java
 public class CountMissingTag {
