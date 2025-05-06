@@ -1,5 +1,6 @@
 # 滑动窗口算法的套路
 
+Leetcode 题单： https://leetcode.cn/problem-list/sliding-window/  （截止 2025.05.06 有163 题）
 
 ### [3. 无重复字符的最长子串](https://leetcode.cn/problems/longest-substring-without-repeating-characters/) - 满足条件的最长的窗口
 
@@ -146,6 +147,10 @@ class Solution {
 - 笔记：[LC159. Longest Substring with At Most Two Distinct Characters - vip](leetcode-vip/LC159.%20Longest%20Substring%20with%20At%20Most%20Two%20Distinct%20Characters%20-%20vip.md)
 - 两种写法都行，枚举右边界（推荐），或者枚举左边界。
 
-
 ### [424. 替换后的最长重复字符 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-repeating-character-replacement/description/)
 - 笔记：[LC424. Longest Repeating Character Replacement](leetcode/LC424.%20Longest%20Repeating%20Character%20Replacement.md)
+- 非常类似的题目，简化版本 [1004. 最大连续1的个数 III - 力扣（LeetCode）](https://leetcode.cn/problems/max-consecutive-ones-iii/description/?envType=problem-list-v2&envId=sliding-window) 笔记：[LC1004. Max Consecutive Ones III](leetcode/LC1004.%20Max%20Consecutive%20Ones%20III.md)
+
+### [30. 串联所有单词的子串 - 力扣（LeetCode）](https://leetcode.cn/problems/substring-with-concatenation-of-all-words/description/?envType=problem-list-v2&envId=sliding-window)
+- 笔记：[LC30 Substring with Concatenation of All Words](leetcode/LC30%20Substring%20with%20Concatenation%20of%20All%20Words.md)
+- 很难想，取模分组，然后再用 sliding window。
