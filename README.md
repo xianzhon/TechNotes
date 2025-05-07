@@ -29,6 +29,7 @@
 - [思路简单但实现复杂的题目汇总](algorithm/08-思路简单但实现复杂的题目汇总.md)
 - [系列题-相互关联](algorithm/09-系列题-相互关联.md)
 - [滑动窗口算法总结](algorithm/10-sliding-window-pattern.md)
+- [动态规划算法总结](algorithm/11-dp-pattern.md)
 
 ## 3. 实践 Demo
 
