@@ -154,3 +154,6 @@ class Solution {
 ### [30. 串联所有单词的子串 - 力扣（LeetCode）](https://leetcode.cn/problems/substring-with-concatenation-of-all-words/description/?envType=problem-list-v2&envId=sliding-window)
 - 笔记：[LC30 Substring with Concatenation of All Words](leetcode/LC30%20Substring%20with%20Concatenation%20of%20All%20Words.md)
 - 很难想，取模分组，然后再用 sliding window。
+
+### 笔记：[LC438 Find All Anagrams in a String](leetcode/LC438%20Find%20All%20Anagrams%20in%20a%20String.md)
+- 固定大小的滑动窗口，相对容易一点
