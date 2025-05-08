@@ -117,3 +117,7 @@ Each time you can either climb `1` or `2` steps. In how many distinct ways c
 
 ### 笔记：[LC3183. The Number of Ways to Make the Sum](leetcode-vip/LC3183.%20The%20Number%20of%20Ways%20to%20Make%20the%20Sum-vip.md) - 巧妙
 - 完全背包问题 + 分组背包问题。
+
+### 笔记：[LC279 Perfect Squares](leetcode/LC279%20Perfect%20Squares.md)
+
+

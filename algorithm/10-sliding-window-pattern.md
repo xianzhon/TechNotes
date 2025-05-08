@@ -157,3 +157,6 @@ class Solution {
 
 ### 笔记：[LC438 Find All Anagrams in a String](leetcode/LC438%20Find%20All%20Anagrams%20in%20a%20String.md)
 - 固定大小的滑动窗口，相对容易一点
+
+### 笔记：[LC187 Repeated DNA Sequences](leetcode/LC187%20Repeated%20DNA%20Sequences.md)
+- 固定大小的滑动窗口，难点是对子串进行编码（求 hash 值）
