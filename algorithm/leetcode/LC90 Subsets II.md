@@ -7,18 +7,18 @@ Given an integer array nums that may contain duplicates, return all possible sub
 The solution set must not contain duplicate subsets. Return the solution in any order.
 
 Example 1:
-	
+
 	Input: nums = [1,2,2]
 	Output: [[],[1],[1,2],[1,2,2],[2],[2,2]]
 
 Example 2:
-	
+
 	Input: nums = [0]
 	Output: [[],[0]]
- 
+
 
 Constraints:
-	
+
 	1 <= nums.length <= 10
 	-10 <= nums[i] <= 10
 ```
@@ -35,7 +35,7 @@ Constraints:
 ```java
 class Solution {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
-        // time: O(2^n n). 子集个数2^n, 将每个方案 copy 到结果 List 中 O(n). 
+        // time: O(2^n n). 子集个数2^n, 将每个方案 copy 到结果 List 中 O(n).
         // space: O(n). 栈的最大深度n, curPath最大的个数n, 哈希表最大的元素个数 n
         Map<Integer, Integer> numFreq = new HashMap<>();
         for (int num : nums) {
@@ -48,6 +48,12 @@ class Solution {
         return ans;
     }
 
+	/*
+	nums: 去重之后的元素
+	index: 记录当前要考虑的元素，两种方案，放或者不放
+	path: 记录已经选择放的元素
+	ans: 记录结果
+	*/
     void backtrack(List<Integer> nums, Map<Integer, Integer> numFreq, int index, List<Integer> path, List<List<Integer>> ans) {
         if (index == nums.size()) {
             ans.add(new ArrayList<>(path));
@@ -59,7 +65,7 @@ class Solution {
             backtrack(nums, numFreq, index + 1, curPath, ans);
             path.add(num);
         }
-        
+
         for (int i = 0; i <= count; i++) { // pop back
             path.remove(curPath.size() - 1);
         }
@@ -76,7 +82,7 @@ class Solution {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
 	    // time: O(2^n * n) <= 排序 O(n logn), backtrack: O(2^n * n)
 	    // space: O(n) <= backtrack 最大深度 n，path 最多保存 n 个元素
-	    
+
         Arrays.sort(nums);
         List<List<Integer>> ans = new ArrayList<>();
         List<Integer> path = new ArrayList<>();
@@ -84,6 +90,12 @@ class Solution {
         return ans;
     }
 
+	/*
+		i: 记录当前要考虑的元素，两种方案，放或者不放
+		path: 记录已经选择放的元素
+		prevSelected: 上一个元素是否选取了
+		ans: 记录结果
+	*/
     void backtrack(int[] A, int i, List<Integer> path, boolean prevSelected, List<List<Integer>> ans) {
         if (i == A.length) {
             ans.add(new ArrayList<>(path));
@@ -92,12 +104,17 @@ class Solution {
         // not select A[i]
         backtrack(A, i + 1, path, false, ans);
 
-        // select A[i]
+        // select A[i] (两种情况需要选择：每一段的第一个元素，或者前一个相同的元素已经选择过)
         if (i == 0 || A[i] != A[i-1] || prevSelected) {
             path.add(A[i]);
             backtrack(A, i + 1, path, true, ans);
-            path.remove(path.size() - 1);
+            path.remove(path.size() - 1);   // backtrack
         }
     }
 }
 ```
+
+
+## 关联题目
+
+- [LC78 Subsets](LC78%20Subsets.md)

@@ -39,6 +39,11 @@ class Solution {
         return ans;
     }
 
+	/*
+	index: 记录当前要考虑的元素，两种方案，放或者不放
+	curPath: 记录已经选择放的元素
+	ans: 记录结果
+	*/
     void backtrack(int[] nums, int index, List<Integer> curPath, List<List<Integer>> ans) {
         if (index == nums.length) {
             ans.add(new ArrayList<>(curPath));
@@ -47,10 +52,14 @@ class Solution {
         // choose nums[index]
         curPath.add(nums[index]);
         backtrack(nums, index + 1, curPath, ans);
-        curPath.remove(curPath.size() - 1);
+        curPath.remove(curPath.size() - 1); // 回溯
 
         // not choose
         backtrack(nums, index + 1, curPath, ans);
     }
 }
 ```
+
+## 关联题目
+
+- [LC90 Subsets II](LC90%20Subsets%20II.md)
