@@ -41,6 +41,7 @@
 - [key-value-app: 练习NodeJs+MongoDB+Docker/Compose 开发部署 Restful API](demo/P02_key-value-app/readme.md)
 - [ES6 New Features](demo/P03_ES6-new-feature/readme.md) - master it with demos
 - [Java 实现单例模式的几种方式](demo/P04_Singleton/readme.md)
+- [GraphQL 初步探索](demo/P05_GraphQL/readme.md)
 
 
 
