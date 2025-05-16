@@ -163,19 +163,20 @@ REVOKE ALL ON sales_summary FROM app_user;
 
 By following these practices, you can maximize the benefits of MVs while minimizing downsides.  
 
+## Which RDB supports MVs
 
 Yes! Different RDBMSs handle **Materialized Views (MVs)** differently in terms of **syntax, features, and optimization**. Below is a comparison of **MySQL, PostgreSQL, and Oracle** regarding MVs:
 
 ---
 
-## **1. PostgreSQL Materialized Views**
-### **Key Features**
+### **1. PostgreSQL Materialized Views**
+#### **Key Features**
 ✅ **Explicit Support**: PostgreSQL has native `MATERIALIZED VIEW` syntax.  
 ✅ **Concurrent Refresh**: Allows reads during refresh (`REFRESH MATERIALIZED VIEW CONCURRENTLY`).  
 ✅ **Indexing**: Supports indexes on MVs for faster queries.  
 ❌ **No Auto-Refresh**: Must be manually or trigger-based refreshed.  
 
-### **Example**
+#### **Example**
 ```sql
 -- Create MV
 CREATE MATERIALIZED VIEW sales_summary AS
@@ -193,22 +194,22 @@ REFRESH MATERIALIZED VIEW CONCURRENTLY sales_summary;
 CREATE INDEX idx_sales_summary ON sales_summary (product_id);
 ```
 
-### **Best Practices in PostgreSQL**
+#### **Best Practices in PostgreSQL**
 - Use `CONCURRENTLY` to avoid locks during refresh.  
 - Define indexes on MVs for performance.  
 - Use triggers or cron jobs for scheduled refreshes.  
 
 ---
 
-## **2. Oracle Materialized Views**
-### **Key Features**
+### **2. Oracle Materialized Views**
+#### **Key Features**
 ✅ **Most Advanced MV Support**:  
    - **Fast (Incremental) Refresh** (uses materialized view logs).  
    - **Query Rewrite**: Oracle can auto-rewrite queries to use MVs.  
    - **On-Commit Refresh**: Real-time MV updates when base tables change.  
 ✅ **Partitioning Support**: Works with partitioned tables.  
 
-### **Example**
+#### **Example**
 ```sql
 -- Create MV with fast refresh
 CREATE MATERIALIZED VIEW sales_summary
@@ -232,13 +233,12 @@ ALTER MATERIALIZED VIEW sales_summary
 REFRESH COMPLETE START WITH SYSDATE NEXT SYSDATE + 1/24;
 ```
 
-### **Best Practices in Oracle**
+#### **Best Practices in Oracle**
 - Use **FAST REFRESH** where possible.  
 - Enable **QUERY REWRITE** for automatic optimization.  
 - Consider **ON COMMIT** for real-time systems.  
 
 ---
-## Different RDB supports MVs
 ### **3. MySQL (No Native MVs, Workarounds)**
 #### **Key Limitations**
 ❌ **No Built-In Materialized Views** (unlike PostgreSQL/Oracle).  
