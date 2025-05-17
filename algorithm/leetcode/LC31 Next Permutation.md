@@ -1,6 +1,5 @@
 
 该题掌握程度：
-- #熟练✓
 - #一般⭕️
 
 Tag: #全排列
@@ -98,7 +97,6 @@ class Solution {
 
 ## 4. 相关联的题目
 
-
-## 5. 可能的 follow-up
-
+[556. 下一个更大元素 III - 力扣（LeetCode）](https://leetcode.cn/problems/next-greater-element-iii/description/)
+这个题目是一个int，排列里面的数字，得到一个比它更大的数。
 
