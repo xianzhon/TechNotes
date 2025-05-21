@@ -20,3 +20,32 @@ from (select name, optime, command, dense_rank() over (partition by name order b
 where t.rk = 1;
 ```
 ↑ 这个有 bug，按 optime 降序，当两行有相同的 name 和 optime 时，他们的 rk 是一样的。这样外层筛选到的结果会包含多条数据，这就不对了。
+
+### 其他解法
+
+#### join ❌
+
+```sql
+SELECT l.name, l.optime, l.command
+FROM log l
+JOIN (
+    SELECT name, MAX(optime) AS max_optime
+    FROM log
+    GROUP BY name
+) latest ON l.name = latest.name AND l.optime = latest.max_optime;  -- 子查询，这里可以跟上多个条件
+```
+
+缺点：对于 name 一样，如果它有两条相同的时间的操作记录，那么这个分组里面会输出两条
+
+#### 自连接 ❌
+
+```sql
+SELECT l.name, l.optime, l.command
+FROM log l
+LEFT JOIN log l2 ON l.name = l2.name AND l.optime < l2.optime
+WHERE l2.name IS NULL;
+```
+
+缺点：对于 name 一样，如果它有两条相同的时间的操作记录，那么这个分组里面会输出两条。
+
+疑问：不过话说回来，如果 name 和 optime 分别都相同的两条记录，结果应该是返回一条呢，还是两条呢？

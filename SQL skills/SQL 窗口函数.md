@@ -1,5 +1,11 @@
 SQL窗口函数（也称为**OLAP函数**）是一种强大的工具，用于在数据集的子集上执行计算，而不需要将数据分组为单独的行。这些函数提供了一种在保持行级别详细信息的同时进行聚合和其他复杂计算的方法。以下是一些常用的SQL窗口函数：
 
+关键点：
+- Aggregate functions take a group of rows with a common set of values (identified by the `GROUP BY` clause) and turn them into a number. E.g. SUM, MIN, MAX, and AVG.
+- Similarly to row-level functions, window functions process rows one by one and produce `one output value for each input row`.
+- 我：窗口函数并不会改变结果的行数，它只是增加了一列，每一行多了一列。 然后我们可以在外层对结果列二次加工（对列加工，或者增加 where 筛选条件）得到我们最终想要的结果。【窗口函数不影响 row 的数量】
+
+
 1. **聚合窗口函数**：
    - `SUM() OVER(...)`: 计算窗口内值的总和。
    - `AVG() OVER(...)`: 计算窗口内值的平均值。
@@ -8,8 +14,22 @@ SQL窗口函数（也称为**OLAP函数**）是一种强大的工具，用于在
    - `COUNT() OVER(...)`: 计算窗口内的行数。
    举例：
    ![image-20250519180104637](https://i.hish.top:8/2025/05/19/180104.png)
+对应的 SQL:
+```sql
+SELECT
+SUM(clicks) OVER (PARTITION BY campaign) AS campaign_clicks
+FROM campaigns
 
-2. **排名窗口函数**：
+-- 对应的 self-join 的方式得到同样结果（但是丑陋，性能更低，不要这么做）
+SELECT a.clicks
+FROM campaigns c
+INNER JOIN (
+  SELECT campaign, SUM(clicks) AS clicks FROM campaigns GROUP BY campaign
+) a
+ON c.campaign = a.campaign
+```
+
+1. **排名窗口函数**：
    - `ROW_NUMBER() OVER(...)`: 为窗口内的每一行分配一个唯一的序号。
    - `RANK() OVER(...)`: 分配一个排名，相同值会获得相同的排名，但会留下间隙。
    - `DENSE_RANK() OVER(...)`: 类似于`RANK()`，但不留下间隙。
