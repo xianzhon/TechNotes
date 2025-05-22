@@ -64,6 +64,7 @@ ORDER BY rnk  -- 这里可以使用窗口函数别名
 - [LC177. Nth Highest Salary](LC177.%20Nth%20Highest%20Salary.md)  `dense_rank` 窗口函数
 - [LC185 Department Top Three Salaries](LC185%20Department%20Top%20Three%20Salaries.md) - dense_rank
 - [LC184. Department Highest Salary](LC184.%20Department%20Highest%20Salary.md) - dense_rank
+- [LC601. 体育馆的人流量](LC601.%20体育馆的人流量.md) - row_number() 且没有 partition 的窗口函数
 
 
 ## SQL 标准内置函数
