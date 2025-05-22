@@ -2,17 +2,17 @@
 
 ## **1. 基本数据结构**
 ### **(1) 线性表**
-- **数组**  
-  - `int[] arr = new int[n];`  
-  - `Arrays` 工具类（`sort`, `binarySearch`, `copyOf`, `fill` 等）  
-- **动态数组**  
-  - `ArrayList<E>`（`add`, `remove`, `get`, `set`, `subList`）  
-- **链表**  
-  - `LinkedList<E>`（`addFirst`, `addLast`, `pollFirst`, `pollLast`）  
+- **数组**
+  - `int[] arr = new int[n];`
+  - `Arrays` 工具类（`sort`, `binarySearch`, `copyOf`, `fill` 等）
+- **动态数组**
+  - `ArrayList<E>`（`add`, `remove`, `get`, `set`, `subList`）
+- **链表**
+  - `LinkedList<E>`（`addFirst`, `addLast`, `pollFirst`, `pollLast`）
 
 ### **(2) 栈（Stack）**
-- `Stack<E>`（遗留类，不推荐）  
-- **推荐使用 `Deque` 实现栈**：  
+- `Stack<E>`（遗留类，不推荐）
+- **推荐使用 `Deque` 实现栈**：
   ```java
   Deque<Integer> stack = new ArrayDeque<>();
   stack.push(1);  // 入栈
@@ -21,14 +21,14 @@
   ```
 
 ### **(3) 队列（Queue）**
-- **普通队列**  
+- **普通队列**
   ```java
   Queue<Integer> queue = new LinkedList<>();
   queue.offer(1);  // 入队
   queue.poll();    // 出队
   queue.peek();    // 查看队首
   ```
-- **双端队列（Deque）**  
+- **双端队列（Deque）**
   ```java
   Deque<Integer> deque = new ArrayDeque<>();
   deque.offerFirst(1);  // 队首入队
@@ -36,7 +36,7 @@
   deque.pollFirst();    // 队首出队
   deque.pollLast();     // 队尾出队
   ```
-- **优先队列（堆）**  
+- **优先队列（堆）**
   ```java
   // 默认最小堆
   PriorityQueue<Integer> minHeap = new PriorityQueue<>();
@@ -50,14 +50,14 @@
 
 ## **2. 集合类（Set / Map）**
 ### **(1) 集合（Set）**
-- **哈希集合（无序）**  
+- **哈希集合（无序）**
   ```java
   Set<Integer> set = new HashSet<>();
   set.add(1);      // 添加
   set.remove(1);   // 删除
   set.contains(1); // 查询
   ```
-- **有序集合（基于红黑树）**  
+- **有序集合（基于红黑树）**
   ```java
   Set<Integer> sortedSet = new TreeSet<>();
   sortedSet.add(3);
@@ -66,7 +66,7 @@
   ```
 
 ### **(2) 映射（Map）**
-- **哈希表（无序）**  
+- **哈希表（无序）**
   ```java
   Map<String, Integer> map = new HashMap<>();
   map.put("a", 1);      // 插入
@@ -74,7 +74,7 @@
   map.containsKey("a"); // 检查键
   map.remove("a");      // 删除
   ```
-- **有序映射（基于红黑树）**  
+- **有序映射（基于红黑树）**
   ```java
   Map<String, Integer> sortedMap = new TreeMap<>();
   sortedMap.put("b", 2);
@@ -84,25 +84,30 @@
 
 
 ## **3. 字符串处理**
-- **`String` 类**  
+- **`String` 类**
   ```java
   String s = "abc";
   s.charAt(0);      // 'a'
   s.substring(1);   // "bc"
   s.indexOf("b");   // 1
   s.split(",");     // 分割字符串
+
+  String.split(regexStr, limit=0); // for ip address: \\.  Set limit=0 to discard all trailing empty string after split
   ```
-- **`StringBuilder`（高效字符串拼接）**  
+- **`StringBuilder`（高效字符串拼接）**
   ```java
   StringBuilder sb = new StringBuilder();
   sb.append("a");
   sb.append("b");
   String result = sb.toString();  // "ab"
   sb.reverse();  // 反转字符串
+  sb.deleteCharAt(sb.length() - 1); // 删除某个位置的字符
+  sb.setLength(0); // 清空
+  sb.insert(pos, "hello");  // T: int/float/String/double/boolean
   ```
 
 ## **4. 数学计算**
-- **`Math` 工具类**  
+- **`Math` 工具类**
   ```java
   Math.max(a, b);
   Math.min(a, b);
@@ -111,14 +116,14 @@
   Math.sqrt(x);    // 平方根
   Math.log(x);     // 自然对数
   ```
-- **大整数计算（`BigInteger`）**  
+- **大整数计算（`BigInteger`）**
   ```java
   BigInteger a = new BigInteger("123456789");
   BigInteger b = new BigInteger("987654321");
   BigInteger sum = a.add(b);  // 加法
   BigInteger product = a.multiply(b);  // 乘法
   ```
-- **大浮点数计算（`BigDecimal`）**  
+- **大浮点数计算（`BigDecimal`）**
   ```java
   BigDecimal a = new BigDecimal("123.456");
   BigDecimal b = new BigDecimal("789.123");
@@ -127,7 +132,7 @@
 
 
 ## **5. 位运算**
-- **基本位运算**  
+- **基本位运算**
   ```java
   int a = 5;  // 0101
   int b = 3;  // 0011
@@ -138,7 +143,7 @@
   a << 1; // 左移 (10)
   a >> 1; // 右移 (2)
   ```
-- **`Integer` 位运算工具**  
+- **`Integer` 位运算工具**
   ```java
   Integer.bitCount(n);  // 统计二进制1的个数
   Integer.highestOneBit(n);  // 最高位1的值
@@ -148,21 +153,21 @@
 
 
 ## **6. 排序与查找**
-- **`Arrays.sort()`**  
+- **`Arrays.sort()`**
   ```java
   int[] arr = {3, 1, 2};
   Arrays.sort(arr);  // 升序排序
   Arrays.sort(arr, (a, b) -> b - a);  // 降序排序
   ```
-- **`Collections.sort()`**  
-  
+- **`Collections.sort()`**
+
   ```java
   List<Integer> list = new ArrayList<>(Arrays.asList(3, 1, 2));
   Collections.sort(list);  // 升序
   Collections.sort(list, (a, b) -> b - a);  // 降序
   ```
-- **二分查找**  
-  
+- **二分查找**
+
   ```java
   int[] arr = {1, 2, 3, 4, 5};
   int idx = Arrays.binarySearch(arr, 3);  // 返回索引
