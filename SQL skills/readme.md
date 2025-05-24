@@ -20,7 +20,7 @@ LIMIT 10;
 执行顺序是：
 1. from table 确定数据源
 2. where 过滤数据
-3. group by 分组
+3. group by 分组  (奇怪，这个顺序似乎不对？mysql 中，可以利用 select 列里面定义的别名，列已经使用过函数)
 4. having 筛选分组
 5. select 选择返回的列
 6. order by 排序结果
@@ -91,3 +91,8 @@ then 1 else 0 end
 ```
 
 
+2 if 函数  （常见的是放到 select 语句中）
+```sql
+COUNT(IF(state = 'approved', 1, NULL)) AS approved_count
+SUM(IF(state = 'approved', amount, 0)) AS approved_total_amount
+```
