@@ -92,7 +92,7 @@ memo:
 | `IFNULL()` / `NULLIF()` | NULL值处理 |
 | `CASE WHEN THEN ELSE END` | 复杂条件判断 |
 | `COALESCE()` | 返回第一个非NULL值 |
-
+- 用过：`ifnull (col, 0)` 如果 col 是 null 的话，输出 0. ref: [LC1158. Market Analysis I](LC1158.%20Market%20Analysis%20I.md)
 ## 六、窗口函数(MySQL 8.0+)
 
 | 函数 | 作用 |
