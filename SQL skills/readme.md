@@ -2,6 +2,9 @@
 
 以 Postgres (MySQL) 的语法练习为主。不过面试中 MySQL 问得比较多。
 
+- 技巧1：写 SQL 的时候，按照 sql 语句实际的执行顺序来思考，会比较简单。先是 from 哪个表，然后是 where 条件，再是group by，having，然后是 select 什么字段，最后是 order by 哪些列。
+- 技巧 2：可以考虑用 CTE (common table expression) 来提到 sql 的可读性，就当做是临时的视图吧（或者临时表）
+- 技巧 3：窗口函数非常好用，比 group by 更加强大的工具
 ## SQL 语句的执行顺序
 ### 简单的 sql 语句 （单个 Select）
 
@@ -65,6 +68,7 @@ ORDER BY rnk  -- 这里可以使用窗口函数别名
 - [LC185 Department Top Three Salaries](LC185%20Department%20Top%20Three%20Salaries.md) - dense_rank
 - [LC184. Department Highest Salary](LC184.%20Department%20Highest%20Salary.md) - dense_rank
 - [LC601. 体育馆的人流量](LC601.%20体育馆的人流量.md) - row_number() 且没有 partition 的窗口函数
+- [LC1164. Product Price at a Given Date](LC1164.%20Product%20Price%20at%20a%20Given%20Date.md) - rank()分组, ifnull
 
 
 ## SQL 标准内置函数
@@ -80,7 +84,7 @@ ORDER BY rnk  -- 这里可以使用窗口函数别名
 
 ## 复杂的语法 (容易忘记)
 
-1. case when
+### 1 case when
 ```sql
 case when exists (
             select 1 from activity a
@@ -91,14 +95,16 @@ then 1 else 0 end
 ```
 
 
-2 if 函数  （常见的是放到 select 语句中）
+### 2 if 函数
+（常见的是放到 select 语句中）
 ```sql
 COUNT(IF(state = 'approved', 1, NULL)) AS approved_count
 SUM(IF(state = 'approved', amount, 0)) AS approved_total_amount
 ```
 
 
-3 common table expression (CTE)
+### 3 common table expression (CTE)
+- 详细用法介绍： [CTE - common table expression 命名临时表](CTE%20-%20common%20table%20expression%20命名临时表.md)
 - 例如，笔记：[LC1158. Market Analysis I](LC1158.%20Market%20Analysis%20I.md)
 ```sql
 with t as (
