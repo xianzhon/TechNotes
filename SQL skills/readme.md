@@ -75,7 +75,7 @@ ORDER BY rnk  -- 这里可以使用窗口函数别名
 
 - [SQL 内置函数列表](SQL%20内置函数列表.md)
 - 举例： `ifnull(col, 0)`  equals to java `Map.getOrDefault(col, 0)`
-- 日期间隔：datediff(date_big, date_small) = diff.  `SELECT DATEDIFF('2023-05-20', '2023-05-15');  -- 返回 5`
+- 日期间隔：datediff(date_big, date_small) = diff.  `select datediff('2023-05-20', '2023-05-15');  -- 返回 5`
 ### 练习题目
 
 - [LC584. Find Customer Referee](LC584.%20Find%20Customer%20Referee.md)  - ifnull
@@ -101,6 +101,9 @@ then 1 else 0 end
 COUNT(IF(state = 'approved', 1, NULL)) AS approved_count
 SUM(IF(state = 'approved', amount, 0)) AS approved_total_amount
 ```
+
+- [LC262. 行程和用户](LC262.%20行程和用户.md)
+- [LC1164. Product Price at a Given Date](LC1164.%20Product%20Price%20at%20a%20Given%20Date.md)
 
 
 ### 3 common table expression (CTE)
