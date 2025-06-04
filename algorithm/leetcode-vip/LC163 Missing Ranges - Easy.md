@@ -85,7 +85,7 @@ class Solution {
 
 
 
-### Improve one
+### Improved one
 
 ```java
     public List<List<Integer>> findMissingRanges(int[] nums, int lower, int upper) {
@@ -101,7 +101,7 @@ class Solution {
     }
 ```
 
-### 写法 3
+### 写法 3 - best
 
 ```java
 class Solution {
