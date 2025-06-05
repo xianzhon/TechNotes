@@ -1,15 +1,23 @@
 #!/bin/bash
 
+# Define directories to exclude (add more as needed)
+exclude_dirs=("node_modules" ".git" "tmp")
+
+# Build find command with exclusions
+find_cmd="find . -type f -name '*.md'"
+for dir in "${exclude_dirs[@]}"; do
+    find_cmd+=" -not \( -path '*/$dir/*' -prune \)"
+done
+
 # Find all .md files recursively (safely handles spaces in filenames)
 files=()
 while IFS= read -r -d $'\0' file; do
     files+=("$file")
-done < <(find . -type f -name "*.md" -print0)
-## Uses find with -print0 to safely handle filenames with spaces or special characters
+done < <(eval "$find_cmd -print0")
 
 # Check if any .md files were found
 if [ ${#files[@]} -eq 0 ]; then
-    echo "No .md files found in current directory or subdirectories."
+    echo "No .md files found (excluding: ${exclude_dirs[*]})."
     exit 1
 fi
 

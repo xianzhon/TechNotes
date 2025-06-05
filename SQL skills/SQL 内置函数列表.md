@@ -83,6 +83,7 @@ MySQL 和标准 SQL 提供了丰富的内置函数，可以分为几大类：聚
 | `UNIX_TIMESTAMP()`         | 日期转时间戳    |
 memo:
 - datediff 使用：`SELECT DATEDIFF('2023-05-20', '2023-05-15');  -- 返回 5`
+- 用过将 date 转换成月份的字符串: `date_format(date_col, '%y-%m')`
 
 ## 五、流程控制函数
 

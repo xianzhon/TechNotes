@@ -10,9 +10,9 @@
 
 题目：[57. 插入区间 - 力扣（LeetCode）](https://leetcode.cn/problems/insert-interval/)
 
-大概意思：就是给了一串区间，按照开始端点排好序了。现在需要插入一段新区间，如何有交集的话，则合并一下区间。  
+大概意思：就是给了一串区间，按照开始端点排好序了。现在需要插入一段新区间，如果有交集的话，则合并。
 
-思路：将新区间插入原来的区间，总共有3种情况，新区间左侧和右侧完全没有交集，中间有交集，需要特殊处理。  
+思路：将新区间插入原有的区间，总共有3种情况，新区间左侧和右侧完全没有交集，中间有交集，需要特殊处理。
 那么算法就可以直接分成3步，先copy左边的，然后合并中间的，最后copy右边的。
 
 ![](https://i.hish.top:8/2023/03/25/085333.png)
@@ -25,8 +25,8 @@ public int[][] insert(int[][] A, int[] newInterval) { // time: O(n), space: O(n)
     int i = 0, n = A.length;
 
     // 左侧完全没有交集的部分  cur.end < start
-    for(; i < n && A[i][1] < start; i++) {            
-        ans.add(new int[] {A[i][0], A[i][1]});            
+    for(; i < n && A[i][1] < start; i++) {
+        ans.add(new int[] {A[i][0], A[i][1]});
     }
 
     // 中间有交集的部分，需要合并 cur.start <= end
@@ -46,18 +46,18 @@ public int[][] insert(int[][] A, int[] newInterval) { // time: O(n), space: O(n)
 }
 ```
 
-这个题，如果换成是 `List<int[]>`  然后要求原地插入，怎么做呢？ 一种方式是使用O(n)空间，使用上面的方式，时间是 O(n)。  
+这个题，如果换成是 `List<int[]>`  然后要求原地插入，怎么做呢？ 一种方式是使用O(n)空间，使用上面的方式，时间是 O(n)。
 或者，直接遍历和操作List，这样时间复杂度是 O(n^2)。
 
 ```java
-public void insertInterval(List<int[]> intervals, int[] newInterval) {     
+public void insertInterval(List<int[]> intervals, int[] newInterval) {
     int i = 0, n = intervals.size();
-    
+
     // 找到左侧边界小于新区间左侧边界的区间（一定没有交集的部分直接跳过）
     while (i < n && intervals.get(i)[1] < newInterval[0]) { // cur.end < start
         i++;
     }
-    
+
     // 处理交集区间  (cur.end >= start && cur.start <= end)
     while (i < n && intervals.get(i)[0] <= newInterval[1]) {
         newInterval[0] = Math.min(newInterval[0], intervals.get(i)[0]);
@@ -65,7 +65,7 @@ public void insertInterval(List<int[]> intervals, int[] newInterval) {
         intervals.remove(i); // 将已处理的区间从List中移除
         n--; // 更新List大小
     }
-    
+
     // 将新区间加入List
     intervals.add(i, newInterval);
 }
@@ -79,7 +79,7 @@ public void insertInterval(List<int[]> intervals, int[] newInterval) {
 
 ![](https://i.hish.top:8/2023/03/25/093237.png)
 
-在具体写法上，因为要获取last.end，因此使用了ArrayDeque，它底层就是一个循环数组实现的双向队列，支持自动扩容。  
+在具体写法上，因为要获取last.end，因此使用了ArrayDeque，它底层就是一个循环数组实现的双向队列，支持自动扩容。
 它提供的接口比较清晰, getLast()/ addLast()/ removeLast() 是在队尾操作，getFirst() / addFirst() / removeFirst()是在队头操作。
 
 ```java
