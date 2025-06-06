@@ -66,7 +66,7 @@ random_file="${files[RANDOM % ${#files[@]}]}"
 ### FILE OPENING ###
 
 # Open with default application (MacOS) and show confirmation
-#open "$random_file"
+open "$random_file"
 echo "Opened: $random_file"
 
 exit 0
