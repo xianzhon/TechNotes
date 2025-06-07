@@ -29,7 +29,7 @@
 exclude_dirs=("node_modules" ".git" "tmp" "*todo*")
 verbose=false
 search_root="."
-open_comd="open"
+open_cmd="open"
 
 # Parse command line arguments
 while [[ "$#" -gt 0 ]]; do
