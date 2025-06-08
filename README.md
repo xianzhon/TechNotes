@@ -40,11 +40,12 @@
 - [演示HashMap 1.8 并发安全问题](demo/01-HashMap-concurrent-issue.md)【HashMap 1.8, 并发安全问题】
 - [key-value-app: 练习NodeJs+MongoDB+Docker/Compose 开发部署 Restful API](demo/P02_key-value-app/readme.md)
 - [ES6 New Features](demo/P03_ES6-new-feature/readme.md) - master it with demos
-- [Java 实现单例模式的几种方式](demo/P04_Singleton/readme.md)
 - [GraphQL 初步探索](demo/P05_GraphQL/readme.md)
 - [利用 WebSocket 实现公共聊天室](demo/P07_Websocket/readme.md) 【演示 WebSocket 协议的使用方法，nodejs 的 ws 库】
 
-
+设计模式系列：
+- [Java 实现单例模式的几种方式](demo/P04_Singleton/readme.md)
+- [观察者模式](demo/P11_ObserverDesignPattern/readme.md)
 
 
 
