@@ -65,6 +65,27 @@
   sortedSet.last();   // 最大元素
   ```
 
+#### 集合的并集、交集、差集
+java 中可以用 Set 提供的接口来求集合的操作，要注意的是这些操作是 in-place的，直接修改了第一个集合（调用方法的对象）。
+```java
+    public static void main(String[] args) {
+        Set<Integer> a = new HashSet<>(Arrays.asList(1, 2, 3, 5));
+        Set<Integer> b = new HashSet<>(Arrays.asList(3, 4, 5, 6));
+
+        // 并集 a U b -> a      (1,2,3,4,5,6)
+        // a.addAll(b);
+
+        // 差集: a - b -> a      (1,2)
+        // a.removeAll(b);
+
+        // 交集: a 交集 b -> a     (3,5)
+        a.retainAll(b);
+
+        System.out.println(a);
+
+    }
+```
+
 ### **(2) 映射（Map）**
 - **哈希表（无序）**
   ```java
@@ -81,6 +102,14 @@
   sortedMap.firstKey();  // 最小键
   sortedMap.lastKey();   // 最大键
   ```
+
+#### 技巧1：合并元素
+例如累计. 可以避免使用 `map.getOrDefault(key, 0) + 1` 这种方式。
+```java
+        Map<String, Integer> wordFreq = new HashMap<>();
+        wordFreq.merge("hello", 1, Integer::sum);   // hello: 1
+        wordFreq.merge("hello", 1, Integer::sum);   // hello: 2
+```
 
 
 ## **3. 字符串处理**
