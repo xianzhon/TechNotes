@@ -35,6 +35,7 @@ class Solution {
         return ans;
     }
 
+	// 考虑空位 index，可以填哪些数，然后要注意去重
     void backtrack(int[] nums, int index, List<List<Integer>> ans) {
         if (index == nums.length - 1) {
             ans.add(Arrays.stream(nums).boxed().collect(Collectors.toList()));
@@ -122,7 +123,7 @@ class Solution {
         // 枚举当前pos位置，能填哪些数
         for(int i = 0; i < A.length; i++) {
             if (visited[i] ||
-                i > 0 && A[i] == A[i-1] && !visited[i - 1]
+                i > 0 && A[i] == A[i-1] && !visited[i - 1] // 这里去重比较复杂，排序之后，对于相邻且相等的元素，如果第一个没有使用，那么第二个则也不能使用
             ) {
                 continue;
             }
