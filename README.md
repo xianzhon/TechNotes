@@ -42,6 +42,7 @@
 - [ES6 New Features](demo/P03_ES6-new-feature/readme.md) - master it with demos
 - [GraphQL 初步探索](demo/P05_GraphQL/readme.md)
 - [利用 WebSocket 实现公共聊天室](demo/P07_Websocket/readme.md) 【演示 WebSocket 协议的使用方法，nodejs 的 ws 库】
+- [redis+lua 脚本实现原子操作](demo/P08_redis_lua/DemoRedisLuaScript/readme.md) 【演示 java 程序怎么访问 redis 去执行 lua 脚本扣减库存】
 
 设计模式系列：
 - [Java 实现单例模式的几种方式](demo/P04_Singleton/readme.md)
