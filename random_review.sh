@@ -26,7 +26,7 @@
 #
 
 # Initialize default configuration
-exclude_dirs=("node_modules" ".git" "tmp" "*todo*")
+exclude_dirs=("node_modules" ".git" "tmp" "*todo*" "templates")
 verbose=false
 search_root="."
 open_cmd="open"
