@@ -112,13 +112,60 @@ memo：注意 lead() 和  lag() 的用法。
 
 ## 七、JSON函数(MySQL 5.7+)
 
-| 函数 | 作用 |
-|------|------|
-| `JSON_EXTRACT()` | 提取JSON值 |
-| `JSON_OBJECT()` | 创建JSON对象 |
-| `JSON_ARRAY()` | 创建JSON数组 |
-| `JSON_CONTAINS()` | 检查JSON包含 |
-| `JSON_SEARCH()` | 搜索JSON路径 |
+| 函数                | 作用            |
+| ----------------- | ------------- |
+| `JSON_EXTRACT()`  | 提取JSON值       |
+| `JSON_OBJECT()`   | 创建JSON对象      |
+| `JSON_ARRAY()`    | 创建JSON数组      |
+| `JSON_CONTAINS()` | 检查JSON包含      |
+| `JSON_SEARCH()`   | 搜索JSON路径      |
+| json_pretty()     | print pretty  |
+| json_unquote      | remove quotes |
+|                   |               |
+实战 json:
+```sql
+create table wide_table (
+    id int auto_increment primary key,
+    data JSON
+);
+
+insert into wide_table (data) values
+	(JSON_OBJECT('name', 'alice', 'age', 25, 'address', json_object('city', 'beijing', 'provice', 'beijing'))),
+	(JSON_OBJECT('name', 'jack', 'age', 35, 'address', json_object('city', 'shanghai', 'provice', 'shanghai')));
+
+-- query example 1: pretty print
+select id, json_pretty(data) from wide_table;
+
+-- query 2: extract column from json and nested json obj
+select
+	JSON_UNQUOTE(json_extract(data, '$.name')) as name,
+	JSON_UNQUOTE(json_extract(data, '$.address.city')) as city
+from wide_table;
+
+-- query 3: filter with json fields
+select
+	JSON_UNQUOTE(json_extract(data, '$.name')) as name,
+	JSON_UNQUOTE(json_extract(data, '$.address.city')) as city
+from wide_table where JSON_UNQUOTE(json_extract(data, '$.address.city')) = 'shanghai';
+--(use explain, we can see, the type of this sql is ALL, that means it will scan all rows)
+
+-- add virtual column
+
+alter table wide_table
+	add column city varchar(30) as (JSON_UNQUOTE(json_extract(data, '$.address.city'))) virtual;
+-- (有了 virtual column 之后，那么就可以直接 select city from wide_column了)
+
+-- add index on virtual column
+create index idx_city on wide_table (city);
+
+-- query with virtual column (verify the index used, type='ref', ref=const)
+explain select
+	JSON_UNQUOTE(json_extract(data, '$.name')) as name,
+	city
+from wide_table where city = 'shanghai';
+```
+video lecture: [从10张表获取信息方案设计（200毫秒干到10毫秒，利用MySQL JSON特性优化千万级订单表）_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1bJ4m1N7kJ/?spm_id_from=333.337.search-card.all.click&vd_source=3b4e5325419175ea5ebf5c16e5e29278)
+
 
 ## 八、系统信息函数
 
