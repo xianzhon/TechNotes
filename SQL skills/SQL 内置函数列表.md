@@ -18,42 +18,42 @@ MySQL 和标准 SQL 提供了丰富的内置函数，可以分为几大类：聚
 
 ## 二、数学函数
 
-| 函数 | 作用 |
-|------|------|
-| `ABS()` | 绝对值 |
-| `CEIL()` / `CEILING()` | 向上取整 |
-| `FLOOR()` | 向下取整 |
-| `ROUND()` | 四舍五入 |
-| `TRUNCATE()` | 截断数字 |
-| `MOD()` | 取模 |
-| `POW()` / `POWER()` | 幂运算 |
-| `SQRT()` | 平方根 |
-| `EXP()` | e的幂 |
-| `LOG()` / `LOG10()` | 对数 |
-| `RAND()` | 随机数 |
+| 函数                        | 作用   |
+| ------------------------- | ---- |
+| `ABS()`                   | 绝对值  |
+| `CEIL()` / `CEILING()`    | 向上取整 |
+| `FLOOR()`                 | 向下取整 |
+| `ROUND()`                 | 四舍五入 |
+| `TRUNCATE()`              | 截断数字 |
+| `MOD()`                   | 取模   |
+| `POW()` / `POWER()`       | 幂运算  |
+| `SQRT()`                  | 平方根  |
+| `EXP()`                   | e的幂  |
+| `LOG()` / `LOG10()`       | 对数   |
+| `RAND()`                  | 随机数  |
 | `SIN()`, `COS()`, `TAN()` | 三角函数 |
-| `PI()` | 返回π值 |
+| `PI()`                    | 返回π值 |
 
 ## 三、字符串函数
 
-| 函数 | 作用 |
-|------|------|
-| `CONCAT()` | 连接字符串 |
-| `CONCAT_WS()` | 用分隔符连接字符串 |
-| `SUBSTRING()` / `SUBSTR()` | 提取子串 |
-| `LEFT()` | 返回左侧字符 |
-| `RIGHT()` | 返回右侧字符 |
-| `LENGTH()` / `CHAR_LENGTH()` | 字符串长度 |
-| `TRIM()` / `LTRIM()` / `RTRIM()` | 去除空格 |
-| `UPPER()` / `UCASE()` | 转为大写 |
-| `LOWER()` / `LCASE()` | 转为小写 |
-| `REPLACE()` | 替换字符串 |
-| `REVERSE()` | 反转字符串 |
-| `STRCMP()` | 比较字符串 |
-| `LOCATE()` / `INSTR()` | 查找子串位置 |
-| `LPAD()` / `RPAD()` | 填充字符串 |
-| `SPACE()` | 返回空格字符串 |
-| `FORMAT()` | 格式化数字 |
+| 函数                               | 作用        |
+| -------------------------------- | --------- |
+| `CONCAT()`                       | 连接字符串     |
+| `CONCAT_WS()`                    | 用分隔符连接字符串 |
+| `SUBSTRING()` / `SUBSTR()`       | 提取子串      |
+| `LEFT()`                         | 返回左侧字符    |
+| `RIGHT()`                        | 返回右侧字符    |
+| `LENGTH()` / `CHAR_LENGTH()`     | 字符串长度     |
+| `TRIM()` / `LTRIM()` / `RTRIM()` | 去除空格      |
+| `UPPER()` / `UCASE()`            | 转为大写      |
+| `LOWER()` / `LCASE()`            | 转为小写      |
+| `REPLACE()`                      | 替换字符串     |
+| `REVERSE()`                      | 反转字符串     |
+| `STRCMP()`                       | 比较字符串     |
+| `LOCATE()` / `INSTR()`           | 查找子串位置    |
+| `LPAD()` / `RPAD()`              | 填充字符串     |
+| `SPACE()`                        | 返回空格字符串   |
+| `FORMAT()`                       | 格式化数字     |
 
 ## 四、日期时间函数
 
@@ -121,7 +121,6 @@ memo：注意 lead() 和  lag() 的用法。
 | `JSON_SEARCH()`   | 搜索JSON路径      |
 | json_pretty()     | print pretty  |
 | json_unquote      | remove quotes |
-|                   |               |
 实战 json:
 ```sql
 create table wide_table (
@@ -130,8 +129,8 @@ create table wide_table (
 );
 
 insert into wide_table (data) values
-	(JSON_OBJECT('name', 'alice', 'age', 25, 'address', json_object('city', 'beijing', 'provice', 'beijing'))),
-	(JSON_OBJECT('name', 'jack', 'age', 35, 'address', json_object('city', 'shanghai', 'provice', 'shanghai')));
+	(JSON_OBJECT('name', 'alice', 'age', 25, 'address', json_object('city', 'beijing', 'province', 'beijing'))),
+	(JSON_OBJECT('name', 'jack', 'age', 35, 'address', json_object('city', 'shanghai', 'province', 'shanghai')));
 
 -- query example 1: pretty print
 select id, json_pretty(data) from wide_table;
@@ -169,12 +168,12 @@ video lecture: [从10张表获取信息方案设计（200毫秒干到10毫秒，
 
 ## 八、系统信息函数
 
-| 函数 | 作用 |
-|------|------|
-| `VERSION()` | MySQL版本 |
-| `DATABASE()` | 当前数据库 |
-| `USER()` / `CURRENT_USER()` | 当前用户 |
-| `CONNECTION_ID()` | 连接ID |
-| `LAST_INSERT_ID()` | 最后插入ID |
+| 函数                          | 作用      |
+| --------------------------- | ------- |
+| `VERSION()`                 | MySQL版本 |
+| `DATABASE()`                | 当前数据库   |
+| `USER()` / `CURRENT_USER()` | 当前用户    |
+| `CONNECTION_ID()`           | 连接ID    |
+| `LAST_INSERT_ID()`          | 最后插入ID  |
 
 这些函数可以组合使用，构建强大的SQL查询语句。不同数据库系统(如Oracle, SQL Server, PostgreSQL)可能有不同的函数名称或实现，但核心功能相似。
